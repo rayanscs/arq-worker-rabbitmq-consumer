@@ -1,6 +1,5 @@
 using ARQ.RabbitMQ.Consumer.Worker;
 using ARQ.RabbitMQ.Consumer.Worker.Infrastructure.CrossCutting.Configurations;
-using Microsoft.Extensions.Configuration;
 
 IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureServices((hostContext, services) =>
