@@ -1,4 +1,4 @@
-﻿using ARQ.RabbitMQ.Consumer.Worker.Infrastructure.Data.Repository.Interface;
+﻿using ARQ.RabbitMQ.Consumer.Worker.Domain.Interface.Repository;
 
 namespace ARQ.RabbitMQ.Consumer.Worker.Infrastructure.Data.Repository
 {

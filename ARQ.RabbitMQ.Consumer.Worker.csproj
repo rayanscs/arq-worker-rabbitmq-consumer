@@ -21,7 +21,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Domain\Configuration\" />
     <Folder Include="Infrastructure\Data\UoW\" />
-    <Folder Include="Domain\Utils\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="D:\repos\ArqProject\ARQ.RabbitMQ.Consumer.Worker\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="D:\repos\ArqProject\ARQ.RabbitMQ.Consumer.Worker\.editorconfig" />
   </ItemGroup>
 </Project>

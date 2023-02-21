@@ -1,4 +1,4 @@
-﻿using ARQ.RabbitMQ.Consumer.Worker.Domain.Service.Interface;
+﻿using ARQ.RabbitMQ.Consumer.Worker.Domain.Interface.Service;
 
 namespace ARQ.RabbitMQ.Consumer.Worker.Domain.Service
 {

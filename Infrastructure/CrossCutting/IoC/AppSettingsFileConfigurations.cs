@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace ARQ.RabbitMQ.Consumer.Worker.Infrastructure.CrossCutting.Configurations
+namespace ARQ.RabbitMQ.Consumer.Worker.Infrastructure.CrossCutting.IoC
 {
     public static class AppSettingsFileConfigurations
     {
@@ -21,9 +21,9 @@ namespace ARQ.RabbitMQ.Consumer.Worker.Infrastructure.CrossCutting.Configuration
                     .AddJsonFile(Path.Combine(AppContext.BaseDirectory, $"appsettings.{ambiente}.json"), false, true)
                     .AddInMemoryCollection(new Dictionary<string, string?>
                     {
-                         ["Environment"] = ambiente
+                        ["Environment"] = ambiente
                     }).Build();
-            
-        }    
+
+        }
     }
 }

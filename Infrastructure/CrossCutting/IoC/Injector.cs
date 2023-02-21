@@ -1,12 +1,13 @@
-﻿using ARQ.RabbitMQ.Consumer.Worker.Domain.Model.Configs;
+﻿using ARQ.RabbitMQ.Consumer.Worker.Domain.Interface.RabbitMq;
+using ARQ.RabbitMQ.Consumer.Worker.Domain.Interface.Repository;
+using ARQ.RabbitMQ.Consumer.Worker.Domain.Interface.Service;
+using ARQ.RabbitMQ.Consumer.Worker.Domain.Model.Configs;
 using ARQ.RabbitMQ.Consumer.Worker.Domain.Model.Http;
 using ARQ.RabbitMQ.Consumer.Worker.Domain.Service;
-using ARQ.RabbitMQ.Consumer.Worker.Domain.Service.Interface;
 using ARQ.RabbitMQ.Consumer.Worker.Infrastructure.Data.Repository;
-using ARQ.RabbitMQ.Consumer.Worker.Infrastructure.Data.Repository.Interface;
 using StackExchange.Redis;
 
-namespace ARQ.RabbitMQ.Consumer.Worker.Infrastructure.CrossCutting.Configurations
+namespace ARQ.RabbitMQ.Consumer.Worker.Infrastructure.CrossCutting.IoC
 {
     public static class Injector
     {
@@ -26,9 +27,9 @@ namespace ARQ.RabbitMQ.Consumer.Worker.Infrastructure.CrossCutting.Configuration
         public static IServiceCollection AddRabbitMq(this IServiceCollection services, IConfiguration configuration)
         {
             var rabbitMqConfig = new RabbitMqConfig();
-            ConfigurationBinder.Bind(configuration, nameof(RabbitMqConfig), rabbitMqConfig);
+            configuration.Bind(nameof(RabbitMqConfig), rabbitMqConfig);
             services.AddSingleton(rabbitMqConfig);
-            services.AddSingleton<IMessageBus, RabbitMqBus>();
+            services.AddSingleton<IRabbitMqBusService, RabbitMqBusService>();
             return services;
         }
 
